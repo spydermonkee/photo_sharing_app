@@ -1,10 +1,10 @@
 <%= content_for(:navigation) do %>
   <% if current_user %>
     <p>Logged in as <%= current_user.name %>.</p>
-    <p><%= link_to "Log the F*^$ out!", session_path("current"), method: "delete" %></p>
+    <p><%= link_to "Log the F*^$ out!", logout_path %></p>
     <p><%= link_to "Main Page", "/" %></p>
   <% else %>
-  <p><%= link_to "Sign Up", new_user_path %></p>
+  <p><%= link_to "Sign Up", signup_path %></p>
   <p><%= link_to "Main Page", "/" %></p>
   <% end %>
 <% end %>

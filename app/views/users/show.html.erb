@@ -11,11 +11,20 @@
 
 <% content_for(:header) do %>
   <div class="header">
-    <h1>Sign Up</h1>
+    <h1>Awesome Posts</h1>
   </div>
 <% end %>
 <div class="row">
-  <%= render 'form' %>
+  <ul>
+    <% @user.posts.each do |post| %>
+      <li><%= post.title %>: <%= post.content %></li>
+    <% end %>
+  </ul>
 </div>
-
-
+<div class="row">
+  <div class="col-sm-3">
+  <%= link_to "New post", new_user_post_path(@user) %>
+  </div>
+  <div class="col-sm-9">
+  </div>
+</div>
