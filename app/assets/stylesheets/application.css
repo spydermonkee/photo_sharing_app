@@ -12,3 +12,16 @@
  *= require_self
  *= require_tree .
  */
+
+.header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.navigation {
+  margin: 20px auto 40px auto;
+}
+
+.footer {
+  margin: 50px auto;
+}

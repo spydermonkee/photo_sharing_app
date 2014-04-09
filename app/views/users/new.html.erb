@@ -1,0 +1,21 @@
+<%= content_for(:navigation) do %>
+  <% if current_user %>
+    <p>Logged in as <%= current_user.name %>.</p>
+    <p><%= link_to "Log the F*^$ out!", session_path("current"), method: "delete" %></p>
+    <p><%= link_to "Main Page", "/" %></p>
+  <% else %>
+  <p><%= link_to "Login", new_session_path %></p>
+  <p><%= link_to "Main Page", "/" %></p>
+  <% end %>
+<% end %>
+
+<% content_for(:header) do %>
+  <div class="header">
+    <h1>Sign Up</h1>
+  </div>
+<% end %>
+<div class="row">
+  <%= render 'form' %>
+</div>
+
+

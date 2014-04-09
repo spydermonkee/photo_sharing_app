@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PhotoSharing</title>
+  <title>Photo Sharing</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div class="container">
+    <div class="row">
+      <div class= "col-sm-3 navigation">
+        <%= yield(:navigation) %>
+      </div>
+      <div class= "col-sm-6">
+        <%= yield(:header) %>
+      </div>
+      <div class= "col-sm-3">
+      </div>
+    </div>
+    <%= flash[:notice] %>
+    <%= flash[:alert] %>
+    <%= yield %>
+  </div>
 </body>
 </html>
