@@ -17,7 +17,9 @@
 <div class="row">
   <ul>
     <% @user.posts.each do |post| %>
-      <li><%= post.title %>: <%= post.content %></li>
+      <li><p><%= post.title %>: <%= post.content %></p>
+          <p><%= image_tag post.photo.url %></p>
+      </li>
     <% end %>
   </ul>
 </div>

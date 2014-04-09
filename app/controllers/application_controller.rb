@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def authorize
-    redirect_to login_url, alert: "You must login to do this thing you wish to do...IMPOSTER!" if (current_user != User.find(params[:user_id]))
+    redirect_to '/', alert: "You can't do this thing you wish to do...IMPOSTER!" if (current_user != User.find(params[:user_id]))
     # before_filter :authorize, only: [:edit, :update] --put in controllers
   end
 end
