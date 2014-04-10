@@ -27,8 +27,10 @@ describe Post do
       attach_file "post_photo", File.expand_path("./app/assets/images/IMG_3662.JPG")
       click_button "Submit"
       click_link "#{title}"
-      save_and_open_page
-
+      page.should have_xpath "//img[@alt='Img 3662']"
+      page.should have_content "Logged in as #{user.name}"
+      page.should have_content "Post: #{title}"
+      page.should have_content "Main"
     end
   end
 end
