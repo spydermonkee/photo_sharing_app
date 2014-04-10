@@ -52,6 +52,10 @@ end
 
 group :test, :development do
   gem 'rspec-rails'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'factory_girl_rails'
+  gem 'faker'
 end
 
 group :test do
