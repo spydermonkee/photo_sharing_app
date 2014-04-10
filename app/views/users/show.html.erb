@@ -17,7 +17,7 @@
 <div class="row">
   <ul>
     <% @user.posts.each do |post| %>
-      <li><p><%= post.title %>: <%= post.content %></p>
+      <li><p><%= link_to "#{post.title}", user_post_path(@user, post) %>: <%= post.content %></p>
           <p><%= image_tag post.photo.url %></p>
       </li>
     <% end %>
