@@ -15,7 +15,8 @@
 <% end %>
 <div class="row">
   <p><%= image_tag @post.photo.url %></p>
-  <p><%= @post.content %></p>
+  <p><%= @post.content %> </p>
+  ##### <%= button_to "Add Tag", tags_path, :class => "btn btn-warning" %>
 </div>
 <div class="row">
   <div class="col-sm-3">

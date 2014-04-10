@@ -7,10 +7,13 @@ describe Tag do
       create_user_and_sign_in(user)
       click_link "#{user.name}"
       click_link 'New post'
-      fill_in 'Title', with: "A cool photo!"
+      title = Faker::Name.first_name
+      fill_in 'Title', with: title
       fill_in 'Content', with: "Some stuff!"
       attach_file "post_photo", File.expand_path("./app/assets/images/IMG_3662.JPG")
       click_button "Submit"
+      click_link "#{title}"
+      click_button "Add Tag"
     end
   end
 end

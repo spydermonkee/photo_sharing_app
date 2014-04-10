@@ -31,6 +31,7 @@ describe Post do
       page.should have_content "Logged in as #{user.name}"
       page.should have_content "Post: #{title}"
       page.should have_content "Main"
+      page.should have_content "Back to my Posts"
     end
   end
 end
