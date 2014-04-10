@@ -15,4 +15,16 @@ describe User do
       page.should have_content "Logged in as #{user.name}"
     end
   end
+
+  context 'sign in' do
+    it 'lets a user log in' do
+      user = FactoryGirl.create :user
+      visit root_path
+      click_link 'Login'
+      fill_in 'Email', with: user.email
+      fill_in 'Password', with: user.password
+      click_button 'Login'
+      page.should have_content "Logged in as #{user.name}"
+    end
+  end
 end
